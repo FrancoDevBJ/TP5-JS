@@ -47,8 +47,16 @@
             background-color: #333 !important;
         }
 
+        /* body.dark-mode #tablaDeDatos {
+            background-color: #2b2b2b !important;
+            border-color: #555; !important;
+        } */
+
+        body.dark-mode .list-tarea,
         body.dark-mode #tablaDeDatos {
             background-color: #2b2b2b !important;
+            color: #e0e0e0 !important;
+            border-color: #555 !important;
         }
 
         body.dark-mode .form-control,

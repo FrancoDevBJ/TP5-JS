@@ -77,7 +77,7 @@ function agregarTarea() {
     const textoTarea = tareaInput.value.trim();
     if (textoTarea !== "") {
         const nuevaTarea = document.createElement('li');
-        nuevaTarea.className = "list-group-item d-flex justify-content-between align-items-center";
+        nuevaTarea.className = "list-group-item d-flex justify-content-between align-items-center list-tarea";
         nuevaTarea.textContent = textoTarea;
         const botonEliminar = document.createElement('button');
         botonEliminar.className = "btn btn-danger btn-sm";

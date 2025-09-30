@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Trabajo Practico 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <main class="container my-5 flex-grow-1">
+
+        <div class="d-flex justify-content-end mb-3">
+            <button id="themeToggleBtn" class="btn btn-outline-dark">
+                <img src="https://cdn-icons-png.flaticon.com/128/14586/14586287.png" alt="" id="moonIcon" width="16" height="16" fill="currentColor"
+                class="bi bi-moon-stars" viewBox="0 0 16 16" >
+
+                <img src="https://cdn-icons-png.flaticon.com/128/101/101361.png" alt="" id="sunIcon" width="16" height="16" fill="currentColor"
+                class="bi bi-sun d-none" viewBox="0 0 16 16">
+            </button>
+        </div>
+        <h1 class="text-center mb-5">Trabajo Práctico 5</h1>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h5 class="card-title">Adivina el Número</h5>
+                        <p class="card-text">Presiona el botón para comenzar el juego.</p>
+                        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#modalAdivina">
+                            Abrir Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalAdivina" tabindex="-1" aria-labelledby="modalAdivinaLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalAdivinaLabel">Ejercicio 1: Adivina el Número</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container text-center">
+                                <button id="comenzarBtn" class="btn btn-primary btn-lg">Comenzar el Juego</button>
+                                <div id="juego" class="mt-4 d-none">
+                                    <p>Ingresa un número entre 1 y 100</p>
+                                    <input type="number" id="ingresarNumero" class="form-control mb-2 w-25 mx-auto">
+                                    <button id="enviarBtn" class="btn btn-primary btn-primary mt-2">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h5 class="card-title">Datos de la Persona</h5>
+                        <p class="card-text">Ingresa tus datos para ver tu generación.</p>
+                        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#modalPersona">
+                            Abrir Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalPersona" tabindex="-1" aria-labelledby="modalPersonaLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalPersonaLabel">Ejercicio 2: Información de la Persona</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3 w-100 mx-auto bg-light p-4 rounded">
+                                <form action="formDatos" id="formDatosPersona">
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="nombre" class="form-label">Nombre:</label>
+                                            <input type="text" id="nombre" name="nombre" class="form-control"
+                                                placeholder="Ingrese su nombre" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="edad" class="form-label">Edad:</label>
+                                            <input type="number" id="edad" name="edad" class="form-control"
+                                                placeholder="Ingrese su edad" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="dni" class="form-label">DNI:</label>
+                                            <input type="text" id="dni" name="dni" class="form-control"
+                                                placeholder="Ingrese su DNI" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="sexo" class="form-label">Sexo:</label>
+                                            <select id="sexo" name="sexo" class="form-select" required>
+                                                <option value="" disabled selected>Seleccione su género</option>
+                                                <option value="H">Hombre</option>
+                                                <option value="M">Mujer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="peso" class="form-label">Peso:</label>
+                                            <input type="number" id="peso" name="peso" class="form-control"
+                                                placeholder="Ingrese su peso en kg" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="altura" class="form-label">Altura (en metros):</label>
+                                            <input type="number" step="0.01" id="altura" name="altura"
+                                                class="form-control" placeholder="Ingrese su altura en centímetros"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="añoNacimiento" class="form-label">Año de nacimiento:</label>
+                                            <input type="number" id="añoNacimiento" name="añoNacimiento"
+                                                class="form-control" placeholder="Ingrese su año de nacimiento"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                                            <select id="nacionalidad" class="form-select" required>
+                                                <option value="" disabled selected>Seleccione su nacionalidad</option>
+                                                <option value="argentina">Argentina</option>
+                                                <option value="bolivia">Bolivia</option>
+                                                <option value="brasil">Brasil</option>
+                                                <option value="chile">Chile</option>
+                                                <option value="colombia">Colombia</option>
+                                                <option value="costa-rica">Costa Rica</option>
+                                                <option value="cuba">Cuba</option>
+                                                <option value="ecuador">Ecuador</option>
+                                                <option value="el-salvador">El Salvador</option>
+                                                <option value="guatemala">Guatemala</option>
+                                                <option value="honduras">Honduras</option>
+                                                <option value="mexico">México</option>
+                                                <option value="nicaragua">Nicaragua</option>
+                                                <option value="panama">Panamá</option>
+                                                <option value="paraguay">Paraguay</option>
+                                                <option value="peru">Perú</option>
+                                                <option value="puerto-rico">Puerto Rico</option>
+                                                <option value="republica-dominicana">República Dominicana</option>
+                                                <option value="uruguay">Uruguay</option>
+                                                <option value="venezuela">Venezuela</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mb-3">Guardar Datos</button>
+                                </form>
+                                <div class="mt-4">
+                                    <button id="generacionBtn" class="btn btn-success me-2">Mostrar Generación</button>
+                                    <button id="mayorMenorBtn" class="btn btn-success me-2">Mostrar Edad</button>
+                                    <button id="mostrarDatosBtn" class="btn btn-success">Mostrar Datos</button>
+                                </div>
+
+                                <div id="tablaDeDatos" class="mt-4 p-3 bg-white rounded border">
+                                    <p><strong>Datos Completos:</strong> <span id="seMuestraDatos"></span></p>
+                                    <p><strong>Generación: </strong> <span id="seMuestraGeneracion"></span></p>
+                                    <p><strong>Mayor de Edad: </strong> <span id="seMuestraEdad"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h5 class="card-title">Lista de Tareas</h5>
+                        <p class="card-text">Crea una lista de tareas para organizar tu día.</p>
+                        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#modalTareas">
+                            Abrir Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalTareas" tabindex="-1" aria-labelledby="modalTareasLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTareasLabel">Ejercicio 3: Lista de Tareas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container mt-auto">
+                                <h1 class="text-center mb-5 fs-3">Lista de tareas</h1>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="tareaInput" class="form-control"
+                                        placeholder="Escribe una nueva tarea...">
+                                    <button class="btn btn-primary" type="button" id="agregarBtn">Agregar</button>
+                                </div>
+                                <ul id="listaDeTareas" class="list-group">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h5 class="card-title">Reloj</h5>
+                        <p class="card-text">Mira la hora y la fecha en tiempo real.</p>
+                        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#modalReloj">
+                            Abrir Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalReloj" tabindex="-1" aria-labelledby="modalRelojLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalRelojLabel">Ejercicio 4: Reloj</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="reloj"
+                                class="d-flex flex-column align-items-center bg-dark text-white p-2 rounded-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h5 class="card-title">Cronómetro</h5>
+                        <p class="card-text">Mide el tiempo transcurrido.</p>
+                        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#modalCronometro">
+                            Abrir Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalCronometro" tabindex="-1" aria-labelledby="modalCronometroLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCronometroLabel">Ejercicio 5: Cronómetro</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h1 class="mb-4">Cronómetro</h1>
+                            <div id="displayCronometro" class="bg-dark text-white p-3 mb-4 rounded fs-1 fw-bold">
+                                00:00:00</div>
+                            <div class="d-flex justify-content-center">
+                                <button id="iniciarCronometro" class="btn btn-success mx-2">Iniciar</button>
+                                <button id="pausarCronometro" class="btn btn-warning mx-2">Pausar</button>
+                                <button id="resetCronometro" class="btn btn-danger mx-2">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h5 class="card-title">Temporizador</h5>
+                        <p class="card-text">Establece una cuenta regresiva.</p>
+                        <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#modalTemporizador">
+                            Abrir Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalTemporizador" tabindex="-1" aria-labelledby="modalTemporizadorLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTemporizadorLabel">Ejercicio 6: Temporizador</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h1 class="mb-4">Temporizador</h1>
+                            <div class="input-group mb-4">
+                                <input type="number" id="minutosInput" class="form-control" placeholder="Minutos"
+                                    min="0">
+                                <input type="number" id="segundosInput" class="form-control" placeholder="Segundos"
+                                    min="0" max="59">
+                            </div>
+                            <div id="displayTemporizador" class="bg-dark text-white p-3 mb-4 rounded fs-1 fw-bold">00:00
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button id="iniciarTemporizador" class="btn btn-success mx-2">Iniciar</button>
+                                <button id="pausarTemporizador" class="btn btn-warning mx-2">Pausar</button>
+                                <button id="resetTemporizador" class="btn btn-danger mx-2">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer class="text-center py-4 mt-5">
+    <div class="container">
+        <p class="mb-0">&copy; 2025 Franco Quinteros | Comision Web-15. Todos los derechos reservados.</p>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
